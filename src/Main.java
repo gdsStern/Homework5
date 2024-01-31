@@ -10,7 +10,7 @@ public class Main {
         }
 
         //Задание 2
-        int clientOS1 = 1;
+        int clientOS = 1;
         int clientDeviceYear = 2016;
         if (clientOS == 0) {
             if (clientDeviceYear < 2015) {
