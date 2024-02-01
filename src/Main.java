@@ -10,30 +10,24 @@ public class Main {
         }
 
         //Задание 2
-        int clientOS = 1;
+        //Даа, я понял, что нельзя создавать несколько раз одну переменную
         int clientDeviceYear = 2016;
-        if (clientOS == 0) {
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else if (clientDeviceYear >= 2015) {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            }
-        } else if (clientOS == 1) {
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            } else if (clientDeviceYear >= 2015) {
-                System.out.println("Установите версию приложения для Android по ссылке");
-            }
+        if (clientOS == 0 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        } else if (clientOS == 0 && clientDeviceYear >= 2015) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientOS == 1 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else if (clientOS == 1 && clientDeviceYear >= 2015) {
+            System.out.println("Установите версию приложения для Android по ссылке");
         }
 
         //Задание 3
         int year = 1998;
-        if (year >= 1584) {
-            if ((year%4==0) && (year%100 != 0) || (year%400 == 0)) {
-                System.out.println(year + " год является високосным");
-            } else {
-                System.out.println(year + " год не является високосным");
-            }
+        if (((year%4==0) && (year%100 != 0) || (year%400 == 0)) && year >= 1584) {
+            System.out.println(year + " год является високосным");
+        } else if (((year%4!=0) && (year%100 == 0) || (year%400 != 0)) && year >= 1584) {
+            System.out.println(year + " год не является високосным");
         } else {
             System.out.println("Вне периода");
         }
@@ -54,10 +48,11 @@ public class Main {
         }
 
         //Задание 5
-        int monthNumber=2;
+        int monthNumber=12;
         switch (monthNumber) {
             case 1:
             case 2:
+            case 12:
                 System.out.println("Зима");
                 break;
             case 3:
@@ -74,9 +69,6 @@ public class Main {
             case 10:
             case 11:
                 System.out.println("Осень");
-                break;
-            case 12:
-                System.out.println("Зима");
                 break;
             default:
                 System.out.println("Месяца нет");
